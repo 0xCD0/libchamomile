@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>libchamomile</title>
+
+	<!-- Bootstrap CSS CDN -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+		integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<!-- Our Custom CSS -->
+	<link rel="stylesheet" href="../../../css/style.css">
+	<!-- Scrollbar Custom CSS -->
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+	<!-- Font Awesome JS -->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+		integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+		crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+		integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+		crossorigin="anonymous"></script>
+
+	<!-- jQuery CDN - Slim version (=without AJAX) -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<!-- Popper.JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+		integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+		crossorigin="anonymous"></script>
+	<!-- Bootstrap JS -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+		integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+		crossorigin="anonymous"></script>
+	<!-- jQuery Custom Scroller CDN -->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+	<!-- Highlighter.js -->
+	<link rel="stylesheet"
+		href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow-night-bright.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- Sidebar  -->
+		<nav id="sidebar">
+			<div class="sidebar-header">
+				<a href="/">
+					<h3 style="text-align: center">libchamomile</h3>
+				</a>
+			</div>
+
+			<ul class="list-unstyled components">
+				<li>
+					<a href="#docSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">API
+						Document</a>
+					<ul class="collapse list-unstyled show" id="docSubmenu">
+						<li>
+							<a href="/pages/api/cryptography/index.html">Cryptography</a>
+						</li>
+						<li>
+							<a href="/pages/api/data/index.html">Data</a>
+						</li>
+						<li>
+							<a href="#NetSubmenu" data-toggle="collapse" aria-expanded="false"
+								class="dropdown-toggle">Net</a>
+							<ul class="collapse list-unstyled show" id="NetSubmenu">
+								<li>
+									<a href="/pages/api/HTTP/index.html">&nbsp;&nbsp;&nbsp;HTTP</a>
+								</li>
+								<li>
+									<a href="/pages/api/FTP/index.html">&nbsp;&nbsp;&nbsp;FTP</a>
+								</li>
+								<li>
+									<a href="#TCPSubmenu" data-toggle="collapse" aria-expanded="false"
+										class="dropdown-toggle">&nbsp;&nbsp;&nbsp;TCP</a>
+									<ul class="collapse list-unstyled" id="TCPSubmenu">
+										<li>
+											<a
+												href="/pages/api/TCP/TCPServer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCPServer</a>
+										</li>
+										<li>
+											<a
+												href="/pages/api/TCP/TCPClient">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCPClient</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#UDPSubmenu" data-toggle="collapse" aria-expanded="false"
+										class="dropdown-toggle">&nbsp;&nbsp;&nbsp;UDP</a>
+									<ul class="collapse list-unstyled" id="UDPSubmenu">
+										<li>
+											<a
+												href="/pages/api/UDP/UDPSender">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UDPSender</a>
+										</li>
+										<li>
+											<a
+												href="/pages/api/UDP/UDPReceiver">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UDPReceiver</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+
+			<ul class="list-unstyled CTAs">
+				<li>
+					<a href="https://github.com/64bitm/libchamomile" class="download">Visit GitHub Page</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
+	<!-- Page Content  -->
+	<div id="content">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+
+				<button type="button" id="sidebarCollapse" class="btn btn-dark">
+					<i class="fas fa-align-left"></i>
+					<span>Toggle Sidebar</span>
+				</button>
+
+				<h3 style="text-align: right;">Chamomile Library Page</h3>
+			</div>
+		</nav>
+
+		<div class="container-fluid" style="margin-top:20px">
+			<h3>libchamomile.Crpytography</br>
+				<h6>암호화를 지원하는 함수들이 모여있는 API입니다.</br>AES, DES, RSA, SEED등의 암호화와 각종 Hash 출력을 지원합니다.</h6>
+			</h3>
+			<hr class="my-4">
+		</div>
+
+		<!-- EncryptAES -->
+		<div>
+			<h1 style="text-align: left;">▶ AES Crypto</h1>
+			<hr class="my-4">
+		</div>
+		<div class="container-fluid card">
+			<div class="alert alert-info" role="alert" style="margin-top:15px;">
+				<h4>string EncryptAES(string Input, string Key, AESCryptoList List)</h4>
+				<h6>문자열을 AES로 암호화 합니다.</h6>
+			</div>
+
+			<div class="row">
+				<div class="col-sm">
+					<h6>Example</h6>
+					<!-- Code -->
+					<pre><code>using system;
+using libchamomile.Cryptography;
+
+public void foo(){
+	string target = "Hello World";
+	target = AESCrypto.EncryptAES(target, "KeyValue", AESCrypto.AESCryptoList.AES128);
+	target = AESCrypto.EncryptAES(target, "KeyValue", AESCrypto.AESCryptoList.AES256);
+
+	// 또는 확장 메소드 사용
+	target = target.ToEncryptAES("KeyValue", AESCrypto.AESCryptoList.AES128);
+	target = target.ToEncryptAES("KeyValue", AESCrypto.AESCryptoList.AES256);
+}</code></pre>
+				</div>
+
+				<div class="col-sm">
+					<h6>Parameters</h6>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">Parameters</th>
+								<th scope="col">Comment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> Input</th>
+								<td>문자열을 입력합니다.</td>
+							</tr>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> Key</th>
+								<td>암호화 키를 입력합니다.</td>
+							</tr>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">AESCryptoList</b> List</th>
+								<td>AESCryptoList 열거형에서 암호화 할 항목을 선택합니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Returns</th>
+						<th scope="col">AES 암호화 된 문자열을 반환합니다.</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+		<!-- DecryptAES -->
+		<div class="container-fluid card">
+			<div class="alert alert-info" role="alert" style="margin-top:15px;">
+				<h4>string DecryptAES(string Input, string Key, AESCryptoList List)</h4>
+				<h6>AES로 암호화된 문자열을 복호화 합니다.</h6>
+			</div>
+
+			<div class="row">
+				<div class="col-sm">
+					<h6>Example</h6>
+					<!-- Code -->
+					<pre><code>using system;
+using libchamomile.Cryptography;
+			
+public void foo(){
+	string target1 = "Hello World".ToEncryptAES("KeyValue", AESCrypto.AESCryptoList.AES128);
+	string target2 = "Hello World".ToEncryptAES("KeyValue", AESCrypto.AESCryptoList.AES256);
+
+	target1 = AESCrypto.DecryptAES(target, "KeyValue", AESCrypto.AESCryptoList.AES128);
+	target2 = AESCrypto.DecryptAES(target, "KeyValue", AESCrypto.AESCryptoList.AES256);
+
+	// 또는 확장 메소드 사용
+	target1 = target.ToDecryptAES("KeyValue", AESCrypto.AESCryptoList.AES128);
+	target2 = target.ToDecryptAES("KeyValue", AESCrypto.AESCryptoList.AES256);
+}</code></pre>
+				</div>
+
+				<div class="col-sm">
+					<h6>Parameters</h6>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">Parameters</th>
+								<th scope="col">Comment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> Input</th>
+								<td>암호화된 문자열을 입력합니다.</td>
+							</tr>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> Key</th>
+								<td>복호화 키를 입력합니다.</td>
+							</tr>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">AESCryptoList</b> List</th>
+								<td>AESCryptoList 열거형에서 복호화 할 항목을 선택합니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Returns</th>
+						<th scope="col">AES로 복호화 된 문자열을 반환합니다.</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+		<!-- EncryptDES -->
+		<div>
+			<h1 style="text-align: left; margin-top:40px;">▶ DES Crypto</h1>
+			<hr class="my-4">
+		</div>
+		<div class="container-fluid card">
+			<div class="alert alert-info" role="alert" style="margin-top:15px;">
+				<h4>string EncryptDES(string Input, string Key)</h4>
+				<h6>문자열을 DES로 암호화 합니다.</h6>
+			</div>
+
+			<div class="row">
+				<div class="col-sm">
+					<h6>Example</h6>
+					<!-- Code -->
+					<pre><code>using system;
+using libchamomile.Cryptography;
+
+public void foo(){
+	string target = "Hello World";
+	target = DESCrypto.EncryptDES(target, "KeyValue");
+
+	// 또는 확장 메소드 사용
+	target = target.ToEncryptDES("KeyValue");
+}</code></pre>
+				</div>
+
+				<div class="col-sm">
+					<h6>Parameters</h6>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">Parameters</th>
+								<th scope="col">Comment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> Input</th>
+								<td>평문 문자열을 입력합니다.</td>
+							</tr>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> Key</th>
+								<td>암호화 할 키 값을 입력합니다. </br><b style="color:#ff0000">반드시 8글자로 입력합니다.</b></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Returns</th>
+						<th scope="col">DES로 암호화된 문자열을 반환합니다.</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+		<!-- DecryptDES -->
+		<div class="container-fluid card" style="margin-top: 30px;">
+			<div class="alert alert-info" role="alert" style="margin-top:15px;">
+				<h4>string DecryptDES(string Input, string key)</h4>
+				<h6>DES로 암호화된 문자열을 복호화합니다.</h6>
+			</div>
+
+			<div class="row">
+				<div class="col-sm">
+					<h6>Example</h6>
+					<!-- Code -->
+					<pre><code>using system;
+using libchamomile.Cryptography;
+
+public void foo(){
+	string target = "Hello World".ToEncryptDES("12345678");
+	target = DESCrypto.DecryptDES(target, "12345678");
+
+	// 또는 확장 메소드 사용
+	target = target.ToDecryptDES("12345678");
+}</code></pre>
+				</div>
+
+				<div class="col-sm">
+					<h6>Parameters</h6>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">Parameters</th>
+								<th scope="col">Comment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> Input</th>
+								<td>암호 문자열을 입력합니다.</td>
+							</tr>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> Key</th>
+								<td>복호화 할 키 값을 입력합니다. </br><b style="color:#ff0000">반드시 8글자로 입력합니다.</b></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Returns</th>
+						<th scope="col">복호화된 문자열을 반환합니다.</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+		<!-- CreateRSAPrivateKey -->
+		<div>
+			<h1 style="text-align: left; margin-top:40px;">▶ RSA Crypto</h1>
+			<hr class="my-4">
+		</div>
+		<div class="container-fluid card">
+			<div class="alert alert-info" role="alert" style="margin-top:15px;">
+				<h4>string CreateRSAPrivateKey()</h4>
+				<h6>RSA Private Key를 만듭니다.</h6>
+			</div>
+
+			<div class="row">
+				<div class="col-sm">
+					<h6>Example</h6>
+					<!-- Code -->
+					<pre><code>using system;
+using libchamomile.Cryptography;
+
+public void foo(){
+	string PrivateKey = RSACrypto.CreateRSAPrivateKey();
+
+	// 또는 파일로 출력
+	bool result = RSACrypto.CreateRSAPrivateKey("C:\\RSA\\PrivateKey.txt");
+}</code></pre>
+				</div>
+
+				<div class="col-sm">
+					<h6>Parameters</h6>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">Parameters</th>
+								<th scope="col">Comment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">입력할 Parameter가 없습니다.</th>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Returns</th>
+						<th scope="col">Private Key를 반환합니다.</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+		<!-- CreateRSAPublicKey -->
+		<div class="container-fluid card" style="margin-top: 30px;">
+			<div class="alert alert-info" role="alert" style="margin-top:15px;">
+				<h4>string CreateRSAPublicKey()</h4>
+				<h6>RSA Public Key를 만듭니다.</h6>
+			</div>
+
+			<div class="row">
+				<div class="col-sm">
+					<h6>Example</h6>
+					<!-- Code -->
+					<pre><code>using system;
+using libchamomile.Cryptography;
+
+public void foo(){
+	string PublicKey = RSACrypto.CreateRSAPublicKey();
+
+	// 또는 파일로 출력
+	bool result = RSACrypto.CreateRSAPublicKey("C:\\RSA\\PublicKey.txt");
+}</code></pre>
+				</div>
+
+				<div class="col-sm">
+					<h6>Parameters</h6>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">Parameters</th>
+								<th scope="col">Comment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">입력할 Parameter가 없습니다.</th>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Returns</th>
+						<th scope="col">Public Key를 반환합니다.</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+		<!-- EncryptRSA -->
+		<div class="container-fluid card" style="margin-top: 30px;">
+			<div class="alert alert-info" role="alert" style="margin-top:15px;">
+				<h4>string EncryptRSA(string Input, string PublicKey)</h4>
+				<h6>문자열을 RSA로 암호화 합니다.</h6>
+			</div>
+
+			<div class="row">
+				<div class="col-sm">
+					<h6>Example</h6>
+					<!-- Code -->
+					<pre><code>using system;
+using libchamomile.Cryptography;
+
+public void foo(){
+	/* 
+	Private Key와 Public Key는 반드시 생성해주어야 하며
+	가장 먼저 Private Key 먼저 생성해주어야 합니다.
+	이미 Private Key와 Public Key의 대칭키 파일들을 가지고 있다면
+	따로 생성하지 않고 파일로 불러들여도 됩니다.
+	*/
+	
+	string PrivateKey = RSACrypto.CreateRSAPrivateKey();
+	string PublicKey = RSACrypto.CreateRSAPublicKey();
+
+	string target = "Hello World";
+
+	string result = RSACrypto.EncryptRSA(target, PublicKey);
+
+	// 또는 확장 메소드 사용
+	target = target.toEncryptRSA(PublicKey);
+}</code></pre>
+				</div>
+
+				<div class="col-sm">
+					<h6>Parameters</h6>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">Parameters</th>
+								<th scope="col">Comment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> Input</th>
+								<td>암호화할 문자열을 입력합니다.</td>
+							</tr>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> PublicKey</th>
+								<td>Public Key를 입력합니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Returns</th>
+						<th scope="col">RSA로 암호화된 문자를 반환합니다.</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+		<!-- DecryptRSA -->
+		<div class="container-fluid card" style="margin-top: 30px;">
+			<div class="alert alert-info" role="alert" style="margin-top:15px;">
+				<h4>string DecryptRSA(string Input, string PrivateKey)</h4>
+				<h6>RSA로 암호화된 문자열을 복호화 합니다.</h6>
+			</div>
+
+			<div class="row">
+				<div class="col-sm">
+					<h6>Example</h6>
+					<!-- Code -->
+					<pre><code>using system;
+using libchamomile.Cryptography;
+
+public void foo(){
+	/*
+	Private Key와 Public Key는 반드시 생성해주어야 하며
+	가장 먼저 Private Key 먼저 생성해주어야 합니다.
+	이미 Private Key와 Public Key의 대칭키 파일들을 가지고 있다면
+	따로 생성하지 않고 파일로 불러들여도 됩니다.
+	*/
+
+	string PrivateKey = RSACrypto.CreateRSAPrivateKey();
+	string PublicKey = RSACrypto.CreateRSAPublicKey();
+
+	string target = "Hello World".toEncryptRSA(PublicKey);
+
+	string result = RSACrypto.DecryptRSA(target, PrivateKey);
+
+	// 또는 확장 메소드 사용
+	target = target.toDecryptRSA(PrivateKey);
+}</code></pre>
+				</div>
+
+				<div class="col-sm">
+					<h6>Parameters</h6>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">Parameters</th>
+								<th scope="col">Comment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> Input</th>
+								<td>복호화할 문자열을 입력합니다.</td>
+							</tr>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> PrivateKey</th>
+								<td>Private Key를 입력합니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Returns</th>
+						<th scope="col">복호화된 문자열을 반환합니다.</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+		<!-- EncryptRSAFromFile -->
+		<div class="container-fluid card" style="margin-top: 30px;">
+			<div class="alert alert-info" role="alert" style="margin-top:15px;">
+				<h4>string EncryptRSAFromFile(string Input, string PublicKeyFilePath)</h4>
+				<h6>Public Key 파일을 불러와 문자열을 RSA로 암호화 합니다.</h6>
+			</div>
+
+			<div class="row">
+				<div class="col-sm">
+					<h6>Example</h6>
+					<!-- Code -->
+					<pre><code>using system;
+using libchamomile.Cryptography;
+
+public void foo(){
+	/*
+	Private Key와 Public Key는 반드시 생성해주어야 하며
+	가장 먼저 Private Key 먼저 생성해주어야 합니다.
+	이미 Private Key와 Public Key의 대칭키 파일들을 가지고 있다면
+	따로 생성하지 않고 파일로 불러들여도 됩니다.
+	*/
+
+	string PrivateKeyFilePath = "C:\\RSA\\PrivateKey.txt";
+	string PublicKeyFilePath = "C:\\RSA\\PublicKey.txt";
+
+	string target = "Hello World";
+
+	string result = RSACrypto.EncryptRSAFromFile(target, PublicKeyFilePath);
+
+	// 또는 확장 메소드 사용
+	target = target.toEncryptRSAFromFile(PublicKeyFilePath);
+}</code></pre>
+				</div>
+
+				<div class="col-sm">
+					<h6>Parameters</h6>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">Parameters</th>
+								<th scope="col">Comment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> Input</th>
+								<td>암호화할 문자열을 입력합니다.</td>
+							</tr>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> PublicKeyFilePath</th>
+								<td>Public Key 파일 경로를 입력합니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Returns</th>
+						<th scope="col">RSA로 암호화된 문자를 반환합니다.</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+		<!-- DecryptRSAFromFile -->
+		<div class="container-fluid card" style="margin-top: 30px;">
+			<div class="alert alert-info" role="alert" style="margin-top:15px;">
+				<h4>string DecryptRSAFromFile(string Input, string PrivateKeyFilePath)</h4>
+				<h6>Private Key 파일을 불러와 RSA로 암호화된 문자열을 복호화 합니다.</h6>
+			</div>
+
+			<div class="row">
+				<div class="col-sm">
+					<h6>Example</h6>
+					<!-- Code -->
+					<pre><code>using system;
+using libchamomile.Cryptography;
+
+public void foo(){
+	/*
+	Private Key와 Public Key는 반드시 생성해주어야 하며
+	가장 먼저 Private Key 먼저 생성해주어야 합니다.
+	이미 Private Key와 Public Key의 대칭키 파일들을 가지고 있다면
+	따로 생성하지 않고 파일로 불러들여도 됩니다.
+	*/
+
+	string PrivateKeyFilePath = "C:\\RSA\\PrivateKey.txt";
+	string PublicKeyFilePath = "C:\\RSA\\PublicKey.txt";
+
+	string target = "Hello World".toEncryptRSAFromFile(PublicKeyFilePath);
+	string result = RSACrypto.DecryptRSAFromFile(target, PrivateKeyFilePath);
+
+	// 또는 확장 메소드 사용
+	target = target.toDecryptRSAFromFile(PrivateKeyFilePath);
+}</code></pre>
+				</div>
+
+				<div class="col-sm">
+					<h6>Parameters</h6>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">Parameters</th>
+								<th scope="col">Comment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> Input</th>
+								<td>복호화할 문자열을 입력합니다.</td>
+							</tr>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> PrivateKeyFilePath</th>
+								<td>Private Key 파일 경로를 입력합니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Returns</th>
+						<th scope="col">복호화된 문자열을 반환합니다.</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+		<!-- EncryptSEED -->
+		<div>
+			<h1 style="text-align: left; margin-top:40px;">▶ SEED Crypto</h1>
+			<hr class="my-4">
+		</div>
+		<div class="container-fluid card">
+			<div class="alert alert-info" role="alert" style="margin-top:15px;">
+				<h4>string EncryptSEED(string Input, string Key)</h4>
+				<h6>문자열을 SEED로 암호화합니다.</h6>
+			</div>
+
+			<div class="row">
+				<div class="col-sm">
+					<h6>Example</h6>
+					<!-- Code -->
+					<pre><code>using system;
+using libchamomile.Cryptography;
+
+public void foo(){
+	string target = "Hello World";
+	target = SEEDCrypto.EncryptSEED(target, "0123456789ABCDEF");
+
+	// 또는 확장 메소드 사용
+	target = target.toEncryptSEED("0123456789ABCDEF");
+}</code></pre>
+				</div>
+
+				<div class="col-sm">
+					<h6>Parameters</h6>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">Parameters</th>
+								<th scope="col">Comment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> Input</th>
+								<td>암호화할 문자열을 입력합니다.</td>
+							</tr>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> Key</th>
+								<td>암호화 키 값을 입력합니다.</br><b style="color:#ff0000">반드시 키 값을 16자리 또는 32자리로 입력해야 합니다.</b>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Returns</th>
+						<th scope="col">SEED로 암호화된 문자열을 반환합니다.</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+		<!-- DecryptSEED -->
+		<div class="container-fluid card" style="margin-top: 30px;">
+			<div class="alert alert-info" role="alert" style="margin-top:15px;">
+				<h4>string DecryptSEED(string Input, string Key)</h4>
+				<h6>SEED로 암호화된 문자열을 복호화합니다.</h6>
+			</div>
+
+			<div class="row">
+				<div class="col-sm">
+					<h6>Example</h6>
+					<!-- Code -->
+					<pre><code>using system;
+using libchamomile.Cryptography;
+
+public void foo(){
+	string target = "Hello World".toEncryptSEED("0123456789ABCDEF");
+	target = SEEDCrypto.DecryptSEED(target, "0123456789ABCDEF");
+
+	// 또는 확장 메소드 사용
+	target = target.toDecryptSEED("0123456789ABCDEF");
+}</code></pre>
+				</div>
+
+				<div class="col-sm">
+					<h6>Parameters</h6>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">Parameters</th>
+								<th scope="col">Comment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> Input</th>
+								<td>암호 문자열을 입력합니다.</td>
+							</tr>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> Key</th>
+								<td>복호화 할 키 값을 입력합니다.</br><b style="color:#ff0000">반드시 키 값을 16자리 또는 32자리로 입력해야 합니다.</b>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Returns</th>
+						<th scope="col">복호화된 문자열을 반환합니다.</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+		<!-- StringToHash -->
+		<div>
+			<h1 style="text-align: left; margin-top:40px;">▶ Hash</h1>
+			<hr class="my-4">
+		</div>
+		<div class="container-fluid card">
+			<div class="alert alert-info" role="alert" style="margin-top:15px;">
+				<h4>string StringToHash(string Input, HashList hashList)</h4>
+				<h6>문자열을 Hash로 출력합니다.</br>[MD5, SHA1, SHA256, SHA384, SHA512]를 지원합니다.</h6>
+			</div>
+
+			<div class="row">
+				<div class="col-sm">
+					<h6>Example</h6>
+					<!-- Code -->
+					<pre><code>using system;
+using libchamomile.Cryptography;
+
+public void foo(){
+	string target = "Hello World";
+
+	Hash.StringToHash(target, Hash.HashList.MD5);
+	Hash.StringToHash(target, Hash.HashList.SHA1);
+	Hash.StringToHash(target, Hash.HashList.SHA256);
+	Hash.StringToHash(target, Hash.HashList.SHA384);
+	Hash.StringToHash(target, Hash.HashList.SHA512);
+
+	// 또는 확장 메소드 사용
+	// Hash.HashList에서 동일하게 사용 가능
+	target = target.ToHash(Hash.HashList.MD5);
+}</code></pre>
+				</div>
+
+				<div class="col-sm">
+					<h6>Parameters</h6>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">Parameters</th>
+								<th scope="col">Comment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> Input</th>
+								<td>암호 문자열을 입력합니다.</td>
+							</tr>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">HashList</b> List</th>
+								<td>HashList 열거형에서 출력할 항목을 선택합니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Returns</th>
+						<th scope="col">문자열의 Hash 값을 출력합니다.</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+		<!-- CreateRandomPassword -->
+		<div>
+			<h1 style="text-align: left; margin-top:40px;">▶ Crypto Utility</h1>
+			<hr class="my-4">
+		</div>
+		<div class="container-fluid card">
+			<div class="alert alert-info" role="alert" style="margin-top:15px;">
+				<h4>string CreateRandomPassword(int PasswordLength = 8)</h4>
+				<h6>랜덤 패스워드를 만듭니다.</h6>
+			</div>
+
+			<div class="row">
+				<div class="col-sm">
+					<h6>Example</h6>
+					<!-- Code -->
+					<pre><code>using system;
+using libchamomile.Cryptography;
+
+public void foo(){
+	string target = CryptoUtility.CreateRandomPassword(32);
+}</code></pre>
+				</div>
+
+				<div class="col-sm">
+					<h6>Parameters</h6>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">Parameters</th>
+								<th scope="col">Comment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">int</b> PasswordLength</th>
+								<td>랜덤으로 출력할 패스워드의 길이를 입력합니다.</br>기본값은 8입니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Returns</th>
+						<th scope="col">랜덤으로 만들어진 패스워드를 반환합니다.</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+	</div>
+</body>
+
+
+<!-- script Start -->
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("#sidebar").mCustomScrollbar({
+			theme: "minimal"
+		});
+
+		$('#sidebarCollapse').on('click', function () {
+			$('#sidebar, #content').toggleClass('active');
+			$('.collapse.in').toggleClass('in');
+			$('a[aria-expanded=true]').attr('aria-expanded', 'false');
+		});
+	});
+</script>
+</body>
+
+</html>

@@ -1,1 +1,270 @@
-test
+<!DOCTYPE html>
+<html>
+		<head>
+				<meta charset="utf-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			
+				<title>libchamomile</title>
+			
+				<!-- Bootstrap CSS CDN -->
+				<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+				<!-- Our Custom CSS -->
+				<link rel="stylesheet" href="css/style.css">
+				<!-- Scrollbar Custom CSS -->
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+			
+				<!-- Font Awesome JS -->
+				<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+				<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+			
+				<!-- jQuery CDN - Slim version (=without AJAX) -->
+				<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+				<!-- Popper.JS -->
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+				<!-- Bootstrap JS -->
+				<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+				<!-- jQuery Custom Scroller CDN -->
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+			
+				<!-- Highlighter.js -->
+				<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow-night-bright.min.css">
+				<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+				<script>hljs.initHighlightingOnLoad();</script>
+				
+			</head>
+			
+<body>
+		<div class="wrapper">
+				<!-- Sidebar  -->
+				<nav id="sidebar">
+					<div class="sidebar-header">
+						<a href="/"> <h3 style="text-align: center">libchamomile</h3></a>
+					</div>
+		
+					<ul class="list-unstyled components">				
+						<li>
+							<a href="#docSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">API Document</a>
+							<ul class="collapse list-unstyled show" id="docSubmenu">
+								<li>
+									<a href="/pages/api/cryptography/index.html">Cryptography</a>
+								</li>
+								<li>
+									<a href="/pages/api/data/index.html">Data</a>
+								</li>
+								<li>
+									<a href="#NetSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Net</a>
+									<ul class="collapse list-unstyled show" id="NetSubmenu">
+										<li>
+											<a href="/pages/api/HTTP/index.html">&nbsp;&nbsp;&nbsp;HTTP</a>
+										</li>
+										<li>
+											<a href="/pages/api/FTP/index.html">&nbsp;&nbsp;&nbsp;FTP</a>
+										</li>
+										<li>
+											<a href="#TCPSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">&nbsp;&nbsp;&nbsp;TCP</a>
+											<ul class="collapse list-unstyled" id="TCPSubmenu">
+												<li>
+													<a href="/pages/api/TCP/TCPServer/index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCPServer</a>
+												</li>
+												<li>
+													<a href="/pages/api/TCP/TCPClient/index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCPClient</a>
+												</li>
+											</ul>	
+										</li>
+										<li>
+											<a href="#UDPSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">&nbsp;&nbsp;&nbsp;UDP</a>
+											<ul class="collapse list-unstyled" id="UDPSubmenu">
+												<li>
+													<a href="/pages/api/UDP/UDPSender/index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UDPSender</a>
+												</li>
+												<li>
+													<a href="/pages/api/UDP/UDPReceiver/index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UDPReceiver</a>
+												</li>
+											</ul>	
+										</li>
+									</ul>	
+								</li>
+							</ul>
+						</li>
+					</ul>
+		
+					<ul class="list-unstyled CTAs">
+						<li>
+							<a href="https://github.com/64bitm/libchamomile" class="download">Visit GitHub Page</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+	<!-- Page Content  -->
+	<div id="content">
+
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+
+				<button type="button" id="sidebarCollapse" class="btn btn-dark">
+					<i class="fas fa-align-left"></i>
+					<span style="margin-left:5px;">Toggle Sidebar</span>
+				</button>
+
+				<h3 style="text-align: right;">Chamomaile Utility Library</h3>
+			</div>
+		</nav>
+
+		<div class="container-fluid" style="margin-top:20px">
+
+			<h1>libchamomile</h1>
+			<hr class="my-4">
+			<p class="lead">이 자주 사용되는 코드들을 묶어 편리하게 사용할 수 있게끔 API 제작 및 dll을 제한적 배포하는 프로젝트입니다.</p>
+
+			<div class="alert alert-info" role="alert" style="margin-top: 50px;">
+				Update Log - 업데이트 기록
+			</div>
+			<div class="accordion" id="updateAccordion">
+
+				<div class="card">
+					<div class="card-header" id="headingOne">
+						<h5 class="mb-0">
+							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#v190311" aria-expanded="true" aria-controls="0.01">
+								<h5>Released libchamomile v190311 <span class="badge badge-success">New</span></h5>
+							</button>
+						</h5>
+					</div>
+
+					<div id="v190311" class="collapse show" aria-labelledby="headingOne" data-parent="#updateAccordion">
+						<div class="card-body">
+							<h4>v190311 Release 정보</h4>
+							<ul>
+								<li>Data 항목에 SerializeToJson 함수 추가</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-header" id="headingOne">
+						<h5 class="mb-0">
+							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#v190304" aria-expanded="true" aria-controls="0.01">
+								<h5>Released libchamomile v190304 <span class="badge badge-success">New</span></h5>
+							</button>
+						</h5>
+					</div>
+
+					<div id="v190304" class="collapse" aria-labelledby="headingOne" data-parent="#updateAccordion">
+						<div class="card-body">
+							<h4>v190304 Release 정보</h4>
+							<ul>
+								<li>TCP Server, TCP Client 클래스 추가 (간편 TCP Server, TCP Client 구축 및 사용 가능)</li>
+								<li>UDP Sender, UDP Receiver 클래스 추가 (간편 UDP Sender, UDP Receiver 사용 가능)</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-header" id="headingOne">
+						<h5 class="mb-0">
+							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#v181226" aria-expanded="true" aria-controls="0.01">
+								<h5>Released libchamomile v181226 <span class="badge badge-success">New</span></h5>
+							</button>
+						</h5>
+					</div>
+
+					<div id="v181226" class="collapse" aria-labelledby="headingOne" data-parent="#updateAccordion">
+						<div class="card-body">
+							<h4>v181226 Release 정보</h4>
+							<ul>
+								<li>Cryptography 항목에 RSA, SEED, SHA1~SHA512 추가</li>
+								<li>Hash 출력을 함수 단위가 아닌 Enum(열거형) 단위로 선택 가능하게 수정</li>
+								<li>AES 출력을 함수 단위가 아닌 Enum(열거형) 단위로 선택 가능하게 수정</li>
+								<li>암호화 Key 값이 맞지 않을 경우에 Exception throw를 적용하여 더 안전한 코드 구성</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-header" id="headingOne">
+						<h5 class="mb-0">
+							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#v181218" aria-expanded="true" aria-controls="0.01">
+								<h5>Released libchamomile v181218</h5>
+							</button>
+						</h5>
+					</div>
+
+					<div id="v181218" class="collapse" aria-labelledby="headingOne" data-parent="#updateAccordion">
+						<div class="card-body">
+							<h4>v181218 Release 정보</h4>
+							<ul>
+								<li>libchamomile.Data Class 등록</li>
+								<li>libchamomile.Net.Data 등재</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-header" id="headingOne">
+						<h5 class="mb-0">
+							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#v181213" aria-expanded="true" aria-controls="0.01">
+								<h5>Released libchamomile v181213</h5>
+							</button>
+						</h5>
+					</div>
+
+					<div id="v181213" class="collapse" aria-labelledby="headingOne" data-parent="#updateAccordion">
+						<div class="card-body">
+							<h4>v181213 Release 정보</h4>
+							<ul>
+								<li>libchamomile.Net Class 등록</li>
+								<li>libchamomile.Net.HTTP 등재</li>
+								<li>libchamomile.Net.FTP 등재</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-header" id="headingOne">
+						<h5 class="mb-0">
+							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#v181212" aria-expanded="true" aria-controls="0.01">
+								<h5>Released libchamomile v181212</h5>
+							</button>
+						</h5>
+					</div>
+
+					<div id="v181212" class="collapse" aria-labelledby="headingOne" data-parent="#updateAccordion">
+						<div class="card-body">
+							<h4>v181212 Release 정보</h4>
+							<ul>
+								<li>libchamomile.dll 최초 등록</li>
+								<li>libchamomile.Cryptography 작성</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+
+
+<!-- script Start -->
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("#sidebar").mCustomScrollbar({
+			theme: "minimal"
+		});
+
+		$('#sidebarCollapse').on('click', function () {
+			$('#sidebar, #content').toggleClass('active');
+			$('.collapse.in').toggleClass('in');
+			$('a[aria-expanded=true]').attr('aria-expanded', 'false');
+		});
+	});
+</script>
+</body>
+
+</html>

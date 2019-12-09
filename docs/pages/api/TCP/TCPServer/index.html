@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>libchamomile</title>
+
+	<!-- Bootstrap CSS CDN -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+		integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<!-- Our Custom CSS -->
+	<link rel="stylesheet" href="../../../../css/style.css">
+	<!-- Scrollbar Custom CSS -->
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+	<!-- Font Awesome JS -->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+		integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+		crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+		integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+		crossorigin="anonymous"></script>
+
+	<!-- jQuery CDN - Slim version (=without AJAX) -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<!-- Popper.JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+		integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+		crossorigin="anonymous"></script>
+	<!-- Bootstrap JS -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+		integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+		crossorigin="anonymous"></script>
+	<!-- jQuery Custom Scroller CDN -->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+	<!-- Highlighter.js -->
+	<link rel="stylesheet"
+		href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow-night-bright.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- Sidebar  -->
+		<nav id="sidebar">
+			<div class="sidebar-header">
+				<a href="/">
+					<h3 style="text-align: center">libchamomile</h3>
+				</a>
+			</div>
+
+			<ul class="list-unstyled components">
+				<li>
+					<a href="#docSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">API
+						Document</a>
+					<ul class="collapse list-unstyled show" id="docSubmenu">
+						<li>
+							<a href="/pages/api/cryptography/index.html">Cryptography</a>
+						</li>
+						<li>
+							<a href="/pages/api/data/index.html">Data</a>
+						</li>
+						<li>
+							<a href="#NetSubmenu" data-toggle="collapse" aria-expanded="false"
+								class="dropdown-toggle">Net</a>
+							<ul class="collapse list-unstyled show" id="NetSubmenu">
+								<li>
+									<a href="/pages/api/HTTP/index.html">&nbsp;&nbsp;&nbsp;HTTP</a>
+								</li>
+								<li>
+									<a href="/pages/api/FTP/index.html">&nbsp;&nbsp;&nbsp;FTP</a>
+								</li>
+								<li>
+									<a href="#TCPSubmenu" data-toggle="collapse" aria-expanded="false"
+										class="dropdown-toggle">&nbsp;&nbsp;&nbsp;TCP</a>
+									<ul class="collapse list-unstyled" id="TCPSubmenu">
+										<li>
+											<a
+												href="/pages/api/TCP/TCPServer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCPServer</a>
+										</li>
+										<li>
+											<a
+												href="/pages/api/TCP/TCPClient">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCPClient</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#UDPSubmenu" data-toggle="collapse" aria-expanded="false"
+										class="dropdown-toggle">&nbsp;&nbsp;&nbsp;UDP</a>
+									<ul class="collapse list-unstyled" id="UDPSubmenu">
+										<li>
+											<a
+												href="/pages/api/UDP/UDPSender">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UDPSender</a>
+										</li>
+										<li>
+											<a
+												href="/pages/api/UDP/UDPReceiver">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UDPReceiver</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+
+			<ul class="list-unstyled CTAs">
+				<li>
+					<a href="https://github.com/64bitm/libchamomile" class="download">Visit GitHub Page</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
+	<!-- Page Content  -->
+	<div id="content">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+
+				<button type="button" id="sidebarCollapse" class="btn btn-dark">
+					<i class="fas fa-align-left"></i>
+					<span>Toggle Sidebar</span>ㅣ
+				</button>
+
+				<h3 style="text-align: right;">Chamomile Library Page</h3>
+			</div>
+		</nav>
+
+		<div class="container-fluid" style="margin-top:20px">
+			<h3>libchamomile.Net.TCPServer</br>
+				<h6>TCP Server 관련 함수들이 모여있는 API 입니다.</h6>
+			</h3>
+			<hr class="my-4">
+		</div>
+
+		<!-- StartServer -->
+		<div class="container-fluid card">
+			<div class="alert alert-info" role="alert" style="margin-top:15px;">
+				<h4>void StartServer(int Port)</h4>
+				<h6>TCP 서버를 시작합니다.</h6>
+			</div>
+
+			<div class="row">
+				<div class="col-sm">
+					<h6>Example</h6>
+					<!-- Code -->
+					<pre><code>using system;
+using libchamomile.Net;
+
+public void foo(){
+	int Port = 5555;
+
+	// Client 접속 시 CallBack받는 이벤트를 연결합니다.
+	TCPServer.OnClientConnectedEvent += TCPServer_OnClientConnectedEvent;
+
+	// Client로부터 메세지 수신 시 CallBack받는 이벤트를 연결합니다.
+	TCPServer.OnReceiveMessageEvent += TCPServer_OnReceiveMessageEvent;
+
+	// 서버를 시작합니다.
+	TCPServer.StartServer(Port);
+}
+
+	// OnClientConnectedEvent CallBack 이벤트 함수입니다.
+	private void TCPServer_OnClientConnectedEvent(TcpClient Socket, string IP) {
+	Console.WriteLine($"Connected IP : {IP}");
+}
+
+	// OnReceiveMessageEvent CallBack 이벤트 함수입니다.
+	private void TCPServer_OnReceiveMessageEvent(string Message) {
+	Console.WriteLine($"Received : {Message}");
+}
+		</code></pre>
+				</div>
+
+				<div class="col-sm">
+					<h6>Parameters</h6>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">Parameters</th>
+								<th scope="col">Comment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">Int</b> Port</th>
+								<td>서버를 시작할 Port를 입력합니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Returns</th>
+						<th scope="col">리턴값이 없습니다. </br>다만 <b style="color:#ff0011;"> 에러 발생시 SocketException</b>을
+							Throw합니다.</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+		<!-- SendMessage -->
+		<div class="container-fluid card" style="margin-top: 30px;">
+			<div class="alert alert-info" role="alert" style="margin-top:15px;">
+				<h4>void SendMessage(TcpClient Socket, string Message)</h4>
+				<h6>서버에 접속한 클라이언트에게 메세지를 보냅니다.</h6>
+			</div>
+
+			<div class="row">
+				<div class="col-sm">
+					<h6>Example</h6>
+					<!-- Code -->
+					<pre><code>using system;
+using libchamomile.Net;
+
+public void foo(){
+    int Port = 5555;
+
+	// 서버를 시작합니다.
+	TCPServer.StartServer(Port);
+
+	// 클라이언트에게 메세지를 송신합니다.
+	TCPServer.SendMessage(ClientSocket, "Test Message");			
+}</code></pre>
+				</div>
+
+				<div class="col-sm">
+					<h6>Parameters</h6>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">Parameters</th>
+								<th scope="col">Comment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">TcpClient</b> Socket</th>
+								<td>클라이언트 소켓을 입력합니다.</td>
+							</tr>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> Message</th>
+								<td>보낼 메세지를 입력합니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Returns</th>
+						<th scope="col">리턴값이 없습니다. </br>다만 <b style="color:#ff0011;"> 에러 발생시 SocketException</b>을
+							Throw합니다.</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+		<!-- SendMessageToAllClient -->
+		<div class="container-fluid card" style="margin-top: 30px;">
+			<div class="alert alert-info" role="alert" style="margin-top:15px;">
+				<h4>void SendMessageToAllClient(string Message)</h4>
+				<h6>서버에 접속한 모든 클라이언트에게 메세지를 보냅니다.</h6>
+			</div>
+
+			<div class="row">
+				<div class="col-sm">
+					<h6>Example</h6>
+					<!-- Code -->
+					<pre><code>using system;
+using libchamomile.Net;
+
+public void foo(){
+    int Port = 5555;
+
+	// 서버를 시작합니다.
+	TCPServer.StartServer(Port);
+
+	// 모든 클라이언트에게 메세지를 송신합니다.
+	TCPServer.SendMessageToAllClient(ClientSocket, "Test Message");
+}</code></pre>
+				</div>
+
+				<div class="col-sm">
+					<h6>Parameters</h6>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">Parameters</th>
+								<th scope="col">Comment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row"><b style="color:#0000ff;">String</b> Message</th>
+								<td>보낼 메세지를 입력합니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Returns</th>
+						<th scope="col">리턴값이 없습니다. </br>다만 <b style="color:#ff0011;"> 에러 발생시 SocketException</b>을
+							Throw합니다.</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+		<!-- StopServer -->
+		<div class="container-fluid card" style="margin-top: 30px;">
+			<div class="alert alert-info" role="alert" style="margin-top:15px;">
+				<h4>void StopServer()</h4>
+				<h6>서버를 중단합니다.</h6>
+			</div>
+
+			<div class="row">
+				<div class="col-sm">
+					<h6>Example</h6>
+					<!-- Code -->
+					<pre><code>using system;
+using libchamomile.Net;
+
+public void foo(){
+	int Port = 5555;
+
+	// 서버를 시작합니다.
+	TCPServer.StartServer(Port);
+
+	// 서버를 중단합니다.
+	TCPServer.StopServer();
+}</code></pre>
+				</div>
+
+				<div class="col-sm">
+					<h6>Parameters</h6>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">Parameters</th>
+								<th scope="col">Comment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">입력할 인자가 없습니다.</th>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Returns</th>
+						<th scope="col">리턴값이 없습니다. </br>다만 <b style="color:#ff0011;"> 에러 발생시 SocketException</b>을
+							Throw합니다.</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+	</div>
+</body>
+
+
+<!-- script Start -->
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("#sidebar").mCustomScrollbar({
+			theme: "minimal"
+		});
+
+		$('#sidebarCollapse').on('click', function () {
+			$('#sidebar, #content').toggleClass('active');
+			$('.collapse.in').toggleClass('in');
+			$('a[aria-expanded=true]').attr('aria-expanded', 'false');
+		});
+	});
+</script>
+</body>
+
+</html>
